@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import { useGetAllNotesQuery } from './features/notes/api'
 import { Appbar } from './components'
+import { AllNotesPage } from './pages'
 
 const App: FC = () => {
   const { data: notes = [], isLoading, isError } = useGetAllNotesQuery([])
@@ -13,14 +14,7 @@ const App: FC = () => {
         <>There is an error</>
       ) : notes ? (
         <>
-          <Appbar />
-          {notes.map((note) => (
-            <article key={note.id}>
-              <h3>{note.title}</h3>
-              <p>{note.content}</p>
-              <h4>{note.category}</h4>
-            </article>
-          ))}
+          <AllNotesPage notes={notes} />
         </>
       ) : null}
     </>
