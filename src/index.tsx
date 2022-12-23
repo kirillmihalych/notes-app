@@ -4,14 +4,18 @@ import { Provider } from 'react-redux'
 import { store } from './app/store'
 import App from './App'
 import './index.css'
+import { ThemeProvider } from '@mui/material/styles'
+import { notesTheme } from './notesTheme'
 
 const container = document.getElementById('root')!
 const root = createRoot(container)
 
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
+    <ThemeProvider theme={notesTheme}>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </ThemeProvider>
   </React.StrictMode>
 )

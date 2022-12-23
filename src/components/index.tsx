@@ -1,3 +1,3 @@
-import Appbar from './Appbar'
+import Navbar from './Navbar'
 
-export { Appbar }
+export { Navbar }
